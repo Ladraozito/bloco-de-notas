@@ -7,7 +7,8 @@ class Conteudo:
         self.barraHorizontal = Scrollbar(master, orient=HORIZONTAL)
         self.conteudo = Text(master, height=0, width=0, wrap=NONE,
                              xscrollcommand=self.barraHorizontal.set,
-                             yscrollcommand=self.barraVertical.set)
+                             yscrollcommand=self.barraVertical.set,
+                             bg='pink')
 
         self.barraHorizontal.grid(row=2, column=1, sticky=EW)
         self.barraVertical.grid(row=1, column=2, sticky=NS)

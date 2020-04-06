@@ -3,9 +3,12 @@ from tkinter import Menu
 
 class BarraSuperior:
     def __init__(self, master):
-        self.barraDeMenu = Menu(master)
-        self.menuDeArquivo = Menu(self.barraDeMenu, tearoff=0)
-        self.menuDeCodigo = Menu(self.barraDeMenu, tearoff=0)
+        self.barraDeMenu = Menu(master, background='#FF00FF', foreground='pink',
+                                activebackground='#FF00FF', activeforeground='pink')
+        self.menuDeArquivo = Menu(self.barraDeMenu, background='#FF00FF',
+                                  foreground='pink', activebackground='#FF00FF', activeforeground='pink')
+        self.menuDeCodigo = Menu(self.barraDeMenu, background='#FF00FF',
+                                 foreground='pink', activebackground='#FF00FF', activeforeground='pink')
 
         self.barraDeMenu.add_cascade(label='Arquivo', menu=self.menuDeArquivo)
         self.menuDeArquivo.add_command(label='Novo', command=master.novo)
@@ -21,4 +24,5 @@ class BarraSuperior:
         self.menuDeCodigo.add_command(label='UTF-16', command=lambda: master.mudarCodificacao('UTF-16'))
         self.menuDeCodigo.add_command(label='UTF-32', command=lambda: master.mudarCodificacao('UTF-32'))
         self.menuDeCodigo.add_command(label='ASCII', command=lambda: master.mudarCodificacao('ASCII'))
-        master.config(menu=self.barraDeMenu)
+
+        master.config(bg='pink', menu=self.barraDeMenu)
